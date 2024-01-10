@@ -1,0 +1,6 @@
+How to run
+1. cd to this directory (/health-ease-project)
+
+2. Using cmd, run .\\flask-health-ease\Scripts\activate (note that i didnt push this folder to github)
+
+3. Already in virtual env. Run "flask run" to start the application
