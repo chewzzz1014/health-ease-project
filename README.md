@@ -2,7 +2,7 @@
 
 - Train models on Kaggle notebook. Built the backend using Flask and frontend using Gradio.
 
-- Used: Pandas, Tensorflow, Sklearn, Flask, Gradio
+- Used: Pandas, Tensorflow, Sklearn, Uvicorn, Gradio
 
 - For more information:
   - About the project
