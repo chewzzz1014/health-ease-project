@@ -4,10 +4,7 @@ from .responses.information.helpline import helplines as helpline
 from .responses.information.therapy import therapy_providers as therapy
 from .generate_response import build_counselling_therapy_info
 from .generate_response import build_helpline_info
-
-counseling_keywords = ["counseling", "counselling", "therapist", "psychologist"]
-therapy_keywords = ["therapy", "therapeutic", "psychotherapy"]
-helpline_keywords = ["helpline", "hotline", "support line"]
+from .keywords import counseling_keywords, therapy_keywords, helpline_keywords
 
 def build_list_of_info(service_name):
     result = f'Here is the List of {service_name} Services Available:\n\n'
