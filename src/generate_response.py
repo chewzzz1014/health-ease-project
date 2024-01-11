@@ -29,7 +29,7 @@ def build_counselling_therapy_info(ele, categoty, idx, has_cat=True):
     if has_cat:
         result += f' - Category: {categoty}\n'
     if len(ele["contact"])>0:
-        result += f' - Contact Number: {"/".join(ele["contact"])}\n'
+        result += f' - Contact Number: {"/ ".join(ele["contact"])}\n'
     if len(ele["email"])>0:
         result += f' - Email: {"/ ".join(ele["email"])}\n'
     if len(ele["website"])>0:
