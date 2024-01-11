@@ -1,11 +1,11 @@
-from flask import Flask
+from fastapi import FastAPI
+import gradio as gr
+from src.main import get_interface
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route('/', methods=['GET'])
-def home():
-    return 'Hello World!'
+@app.get('/')
+async def root():
+    return 'Gradio app is running at /chat', 200
 
-
-if __name__ == '__main__':
-    app.run()
+app = gr.mount_gradio_app(app, get_interface(), path='/chat')

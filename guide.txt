@@ -1,6 +1,13 @@
 How to run
 1. cd to this directory (/health-ease-project)
 
-2. Using cmd, run .\\flask-health-ease\Scripts\activate (note that i didnt push this folder to github)
+2. Using cmd, run .\\venv\Scripts\activate (note that i didnt push this virtual env folder to github)
 
-3. Already in virtual env. Run "flask run" to start the application
+3. Already in virtual env. Run "uvicorn server:app --reload" to start the application
+
+
+
+
+Install dependencies in virtual env
+1. pip freeze > requirements.txt
+2. pip install -r requirements.txt
