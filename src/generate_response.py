@@ -8,6 +8,8 @@ from .responses.information.therapy import therapy_providers as therapy
 from .responses.bridges.advices import advices_bridge as advices_bridge
 from .responses.bridges.therapy_info import help_bridge as therapy_bridge
 from .responses.bridges.welcome_msgs import welcoming_messages as welcoming_msg
+from .responses.advices.advices_moderate_depressed import moderate_depressed_advices as adv_moderate
+from .responses.advices.advices_severe_depressed import severe_depressed_advices as adv_severe
 
 classes = {'2': 'Not depressed', '1': 'Moderately depressed', '0': 'Severely depressed'}
 
@@ -48,8 +50,14 @@ def build_helpline_info(ele, idx):
         result += f' - Website: {"/".join(ele["website"])}\n'
     return result
 
+def build_advice(arr):
+    result = f'{random_choose_one(advices_bridge)}\n\n'
+    for ele in arr:
+        result += f' - {ele}\n'
+    return result
+
 # for moderate depression
-# 2 therapy info @ 2 counselling info
+# 2 therapy info @ 2 counselling info + 2 advices
 def get_moderate_information():
     # 2 therapy or counselling info
     category = random.randint(0,1)
@@ -62,10 +70,11 @@ def get_moderate_information():
     chosen_elements = random_choose_many(choose_from,2)
     x1 = build_counselling_therapy_info(chosen_elements[0], service_name, 1)
     x2 = build_counselling_therapy_info(chosen_elements[1], service_name, 2)
-    return f'{x1}\n{x2}'
+    advices = build_advice(random_choose_many(adv_moderate, 2))
+    return f'{x1}\n{x2}\n\n{advices}'
 
 # for severe depression
-# 1 therapy info + 1 counselling info
+# 1 therapy info + 1 counselling info + 2 advices
 def get_severe_information():
     result = ''
     chosen_elements = random_choose_one(helpline)
@@ -73,10 +82,8 @@ def get_severe_information():
     result += f'{x}\n'
     chosen_elements = random_choose_one(counselling)
     x = build_counselling_therapy_info(chosen_elements, 'Counselling', 2)
-    result += f'\n{x}\n'
-    chosen_elements = random_choose_one(therapy)
-    x = build_counselling_therapy_info(chosen_elements, 'Therapy', 3)
-    result += f'{x}\n'
+    result += f'\n{x}\n\n'
+    result += f'{build_advice(random_choose_many(adv_severe, 2))}'
     return result
 
 # combine all the necessary except for depression level

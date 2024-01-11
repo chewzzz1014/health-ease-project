@@ -45,5 +45,8 @@ def get_interface():
         get_output,
         chatbot=gr.Chatbot(height=500),
         theme='soft',
-        title='HealthEase'
+        title='HealthEase',
+        retry_btn=None,
+        undo_btn=None,
+        clear_btn=None
     )

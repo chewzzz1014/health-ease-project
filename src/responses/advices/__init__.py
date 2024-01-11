@@ -1,2 +1,2 @@
-from advices_moderate_depressed import moderate_depressed_advices
-from advices_severe_depressed import severe_depressed_advices
+from .advices_moderate_depressed import moderate_depressed_advices
+from .advices_severe_depressed import severe_depressed_advices
