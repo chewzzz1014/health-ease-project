@@ -13,8 +13,6 @@ from .responses.advices.advices_severe_depressed import severe_depressed_advices
 
 classes = {'2': 'Not depressed', '1': 'Moderately depressed', '0': 'Severely depressed'}
 
-# TODO: add advices, format the output
-
 def random_choose_one(arr: list):
     if not arr:
         return None
@@ -26,28 +24,30 @@ def random_choose_many(arr: list, n: int):
     chosen_elements = random.sample(arr, n)
     return chosen_elements
 
-def build_counselling_therapy_info(ele, categoty,idx):
+def build_counselling_therapy_info(ele, categoty, idx, has_cat=True):
     result = f'{idx}.**{ele["name"]}**\n'
-    result += f' - Category: {categoty}\n'
+    if has_cat:
+        result += f' - Category: {categoty}\n'
     if len(ele["contact"])>0:
         result += f' - Contact Number: {"/".join(ele["contact"])}\n'
     if len(ele["email"])>0:
-        result += f' - Email: {"/".join(ele["email"])}\n'
+        result += f' - Email: {"/ ".join(ele["email"])}\n'
     if len(ele["website"])>0:
-        result += f' - Website: {"/".join(ele["website"])}\n'
+        result += f' - Website: {"/ ".join(ele["website"])}\n'
     if len(ele["address"])>0:
-        result += f' - Address: {"/".join(ele["address"])}\n'
+        result += f' - Address: {"/ ".join(ele["address"])}\n'
     return result
 
-def build_helpline_info(ele, idx):
+def build_helpline_info(ele, idx, has_cat=True):
     result = f'{idx}.**{ele["name"]}**\n'
-    result += f' - Category: Emergency Helpline\n'
+    if has_cat:
+        result += f' - Category: Emergency Helpline\n'
     if len(ele["contact"])>0:
-        result += f' - Contact Number: {"/".join(ele["contact"])}\n'
+        result += f' - Contact Number: {"/ ".join(ele["contact"])}\n'
     if len(ele["email"])>0:
-        result += f' - Email: {"/".join(ele["email"])}\n'
+        result += f' - Email: {"/ ".join(ele["email"])}\n'
     if len(ele["website"])>0:
-        result += f' - Website: {"/".join(ele["website"])}\n'
+        result += f' - Website: {"/ ".join(ele["website"])}\n'
     return result
 
 def build_advice(arr):
@@ -57,9 +57,10 @@ def build_advice(arr):
     return result
 
 # for moderate depression
-# 2 therapy info @ 2 counselling info + 2 advices
+# 1-2 therapy info @ 1-2 counselling info + 2 advices
 def get_moderate_information():
-    # 2 therapy or counselling info
+    # 1-2 therapy or counselling info
+    result = ''
     category = random.randint(0,1)
     if category == 0:
         choose_from = therapy
@@ -67,11 +68,13 @@ def get_moderate_information():
     elif category == 1:
         choose_from = counselling
         service_name = 'Counselling'
-    chosen_elements = random_choose_many(choose_from,2)
-    x1 = build_counselling_therapy_info(chosen_elements[0], service_name, 1)
-    x2 = build_counselling_therapy_info(chosen_elements[1], service_name, 2)
-    advices = build_advice(random_choose_many(adv_moderate, 2))
-    return f'{x1}\n{x2}\n\n{advices}'
+    random_count = random.randint(1,2)
+    chosen_elements = random_choose_many(choose_from,random_count)
+    result += build_counselling_therapy_info(chosen_elements[0], service_name, 1)
+    if len(chosen_elements) == 2:
+        result += f'\n{build_counselling_therapy_info(chosen_elements[1], service_name, 2)}'
+    result += f'\n\n{build_advice(random_choose_many(adv_moderate, 2))}'
+    return result
 
 # for severe depression
 # 1 therapy info + 1 counselling info + 2 advices
@@ -93,12 +96,12 @@ def generate_contents(depression_level):
     if depression_level == 2:
         replies = random_choose_one(r_2)
         return replies
-    # replies + 2 therapy info @ 2 counselling info
+    # replies + 1-2 therapy info @ 1-2 counselling info + 2 advices
     elif depression_level == 1:
-        return f'{random_choose_one(r_1)}\n\n{random_choose_one(therapy_bridge)}\n\n{get_moderate_information()}'
-    # replies + 1 helpline info + 1 therapy info + 1 counselling info
+        return f'{random_choose_one(r_1)}\n\n{random_choose_one(therapy_bridge)}\n{get_moderate_information()}'
+    # replies + 1 helpline info + 1 therapy info + 1 counselling info + 2 advices
     elif depression_level == 0:
-        return f'{random_choose_one(r_1)}\n\n{random_choose_one(therapy_bridge)}\n\n{get_severe_information()}'
+        return f'{random_choose_one(r_1)}\n\n{random_choose_one(therapy_bridge)}\n{get_severe_information()}'
     else:
         return ''
 

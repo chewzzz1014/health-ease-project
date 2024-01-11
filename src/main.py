@@ -5,6 +5,8 @@ import pickle
 import keras
 from sklearn.feature_extraction.text import CountVectorizer
 from .generate_response import generate_reply_body
+from .analyse_keyword import check_keywords
+from .analyse_keyword import get_support_information
 
 import sys
 print(sys.path)
@@ -38,7 +40,10 @@ def get_depression_level(user_message):
 # adjust height of chat interface (full height)
 
 def get_output(user_message, chat_history):
-    return generate_reply_body(get_depression_level(user_message))
+    if not check_keywords(user_message):
+        return generate_reply_body(get_depression_level(user_message))
+    else:
+        return get_support_information(user_message)
 
 def get_interface():
     return gr.ChatInterface(
