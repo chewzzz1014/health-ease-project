@@ -3,7 +3,7 @@ How to run
 
 2. Using cmd, run .\\venv\Scripts\activate (note that i didnt push this virtual env folder to github)
 
-3. Already in virtual env. Run "uvicorn server:app --reload" to start the application
+3. Already in virtual env. Run uvicorn server:app --reload --static-dir= to start the application
 
 
 

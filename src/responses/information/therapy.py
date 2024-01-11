@@ -49,7 +49,7 @@ therapy_providers = [
     },
     {
         "name": "Hospital Selayang",
-        "contact": ["03-6126 333 (ext. 4268)"],
+        "contact": ["03-6126 333"],
         "description": "",
         "email": ["enquiry@selayanghospital.gov.my"],
         "website": ["http://hselayang.moh.gov.my/en/"],
@@ -97,7 +97,7 @@ therapy_providers = [
     },
     {
         "name": "University Malaya Specialist Centre",
-        "contact": ["03-7841 4188 / 4000"],
+        "contact": ["03-7841 4188", "03-7841 4000"],
         "description": "",
         "email": [],
         "website": ["https://www.umsc.my/"],
@@ -113,7 +113,7 @@ therapy_providers = [
     },
     {
         "name": "KPJ Kajang Specialist Hospital",
-        "contact": ["03-8769 2999 (ext. 2879)"],
+        "contact": ["03-8769 2999"],
         "description": "",
         "email": [],
         "website": ["https://www.kpjkajang.com/"],
