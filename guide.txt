@@ -3,7 +3,7 @@ How to run
 
 2. Using cmd, run .\\venv\Scripts\activate (note that i didnt push this virtual env folder to github)
 
-3. Already in virtual env. Run uvicorn server:app --reload --static-dir= to start the application
+3. Already in virtual env. Run uvicorn server:app --reload to start the application (refresh after every changes)
 
 
 
@@ -11,3 +11,6 @@ How to run
 Install dependencies in virtual env
 1. pip freeze > requirements.txt
 2. pip install -r requirements.txt
+
+Run on server
+uvicorn server:app --host 0.0.0.0 --port 5000

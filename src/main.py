@@ -1,7 +1,6 @@
 import gradio as gr
 from pathlib import Path
 import numpy as np
-import random
 import pickle
 import keras
 from keras.preprocessing.sequence import pad_sequences
@@ -45,15 +44,18 @@ def get_depression_level(user_message):
     return np.argmax(pred)
 
 # TODO
-# handle empty input string
+# ✅ handle empty input string
 # ✅ get depression level
 # ✅ generate response (based on template)
 # ✅ generate information (counselling/helpline/therapy) when keyword is mentioned 
 # ✅ adjust height of chat interface (full height)
 
+def contains_no_alphabets(input_string):
+    return all(not char.isalpha() for char in input_string)
+
 def get_output(user_message, chat_history):
-    if user_message.strip() == '':
-        return "It seems like you didn't enter a message. Please type something to get a response."
+    if user_message.strip() == '' or contains_no_alphabets(user_message):
+        return "It seems like you didn't enter a valid message. Try again."      
     elif not check_keywords(user_message):
         return generate_reply_body(get_depression_level(user_message))
     else:

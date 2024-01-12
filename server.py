@@ -6,6 +6,6 @@ app = FastAPI()
 
 @app.get('/')
 async def root():
-    return 'Gradio app is running at /chat', 200
+    return 'HealthEase is running at /chat', 200
 
 app = gr.mount_gradio_app(app, get_interface(), path='/chat')
