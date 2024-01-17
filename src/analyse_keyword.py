@@ -7,7 +7,7 @@ from .generate_response import build_helpline_info
 from .keywords import counseling_keywords, therapy_keywords, helpline_keywords
 
 def build_list_of_info(service_name):
-    result = f'Here is the List of {service_name} Services Available:\n\n'
+    result = f'Here is the List of {service_name} Services Available:\n'
     if service_name == 'Therapy':
         for idx, ele in enumerate(random.sample(therapy, 5)):
             result += f'{build_counselling_therapy_info(ele, service_name, idx+1, False)}\n'
@@ -26,11 +26,11 @@ def check_keywords(user_message):
     return False
 
 def check_service_name(user_message):
-    if any(keyword in user_message for keyword in counseling_keywords):
-        return 'Counselling'
+    if any(keyword in user_message for keyword in helpline_keywords):
+        return 'Emergency Helpline'
     if any(keyword in user_message for keyword in therapy_keywords):
         return 'Therapy'
-    return 'Emergency Helpline'
+    return 'Counselling'
 
 def get_support_information(user_message):
     service_name = check_service_name(user_message)

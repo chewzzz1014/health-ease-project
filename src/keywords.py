@@ -1,7 +1,6 @@
 counseling_keywords = ["counseling", "counselling", "psychologist", "support","help", "counselor", "resources", "assistance", "emotional", "advice", "guidance", "well-being", "mental health", "consultation", "mental health professional", "talk", "listening", "mind", "mental wellness", "stress relief", "guidance", "self-discovery", "supportive", "healing", "insight", "mental wellness support", "mindset", "life coaching", "relationship advice", "self-improvement", "cognitive", "empathy", "problem-solving", "reflection",
     "personal development", "stress management", "therapeutic communication",
-    "self-expression", "self-discovery", "emotional intelligence", "listening skills",
-    "psychosocial support", "interpersonal skills", "well-being strategies",
+    "self-expression", "self-discovery", "emotional intelligence", "psychosocial support", "interpersonal skills", "well-being strategies",
     "positive psychology", "coping mechanisms", "resilience building", "solution-focused",
     "holistic healing", "mind-body connection", "peer counseling", "compassionate guidance",
     "life transitions", "mental resilience", "self-care practices", "growth mindset",
@@ -17,7 +16,7 @@ therapy_keywords = ["therapy", "therapeutic", "psychotherapy", "therapist", "cou
     "family systems therapy", "creative expression", "transformational therapy",
     "psychodynamic approach", "mindful living", "holistic well-being"]
 
-helpline_keywords = ["helpline", "hotline", "support line", "emergency support", "assistance service", "help desk", "contact center", "crisis line", "emergency helpline", "listening service", "aid line", "response line", "urgent assistance", "outreach", "caring line", "24/7 support", "talk line", "confidential help", "community support", "emotional assistance", "mental health crisis", "mental health first aid", "non-profit helpline", "peer support", "human connection", "compassionate listening", "hopeful conversation", "emotional support line", "peer listening", "community outreach", "empathetic listening",
+helpline_keywords = ["listen", "helpline", "hotline", "support line", "emergency support", "assistance service", "help desk", "contact center", "crisis line", "emergency helpline", "listening service", "aid line", "response line", "urgent assistance", "outreach", "caring line", "24/7 support", "talk line", "confidential help", "community support", "emotional assistance", "mental health crisis", "mental health first aid", "non-profit helpline", "peer support", "human connection", "compassionate listening", "hopeful conversation", "emotional support line", "peer listening", "community outreach", "empathetic listening",
     "mental health outreach", "crisis intervention", "mental health advocate",
     "confidential helpline", "compassionate assistance", "24-hour support", "hopeful conversation",
     "emotional care", "humanitarian aid", "peer assistance", "non-judgmental help",

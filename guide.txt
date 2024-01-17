@@ -1,16 +1,36 @@
-How to run
+*****************How to run*****************
 1. cd to this directory (/health-ease-project)
 
 2. Using cmd, run .\\venv\Scripts\activate (note that i didnt push this virtual env folder to github)
 
 3. Already in virtual env. Run uvicorn server:app --reload to start the application (refresh after every changes)
 
-
-
-
-Install dependencies in virtual env
+*******Install dependencies in virtual env*******
 1. pip freeze > requirements.txt
 2. pip install -r requirements.txt
 
-Run on server
+*****************Run server @ Deploy*****************
 uvicorn server:app --host 0.0.0.0 --port 5000
+
+
+*****************Example*****************
+Not D
+1. Life has its ups and downs, right? Hoping for better days ahead.
+2. Sometimes, I find it hard to focus on things around me. It's like I'm here, but not really present.
+3. Feeling a bit down today. The weather is gloomy, and I'm not in the mood for anything
+
+Moderate D
+1. I'm feeling hopeless and have even had thoughts of suicide in the past. It's a dark place, and I don't know how to escape it.
+2. Lately, I've been struggling with both anxiety and depression. It's hard to explain what's going on in my head.
+3. Struggling with depression and anxiety for years. Recently had another suicide attempt. I feel like a burden to everyone around me.
+4. It’s like I am alone with all my problems. I am sad about the fact I can’t trust anyone and nobody could help me because I feel like nobody understand how I feel. Depression is holding me tight today..
+
+Severely D 
+1.
+2.
+3.
+
+information
+1. who can i talk to
+2. where can i get mental health therapy
+3. i want a talking ear

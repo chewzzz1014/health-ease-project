@@ -59,7 +59,7 @@ def get_output(user_message, chat_history):
     elif not check_keywords(user_message):
         return generate_reply_body(get_depression_level(user_message))
     else:
-        return get_support_information(user_message)
+        return f'Depression Level Detected: **{classes[str(get_depression_level(user_message))]}**\n\n{get_support_information(user_message)}'
 
 def get_interface():
     return gr.ChatInterface(
