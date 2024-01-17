@@ -5,5 +5,5 @@
 - Used: Pandas, Tensorflow, Sklearn, Uvicorn, Gradio
 
 - For more information:
-  - About the project
-  - Kaggle Notebook
+  - About the project (Final Report Soon...)
+  - [Kaggle Notebook](https://www.kaggle.com/code/chewziqing/health-ease-depression-prediction)
